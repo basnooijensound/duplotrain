@@ -1,0 +1,48 @@
+:root {
+  --blue: #0e6dbf;
+  --sky: #36abef;
+  --cream: #fff8e8;
+  --shadow: rgba(0,0,0,.25);
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { width:100%; height:100%; margin:0; overflow:hidden; background:var(--sky); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; touch-action:none; user-select:none; }
+body { display:flex; align-items:center; justify-content:center; }
+#app { position:relative; width:100vw; height:100vh; max-width:177.8vh; max-height:56.25vw; overflow:hidden; background:var(--sky); }
+#scene { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+/* Cover the baked-in bottom controls with our live controls. */
+#controlBand { position:absolute; left:0; right:0; bottom:0; height:29%; background:linear-gradient(to bottom, rgba(54,171,239,0) 0%, rgba(54,171,239,.92) 23%, rgba(54,171,239,1) 38%); }
+#speedBox { position:absolute; left:23%; right:21%; bottom:3.0%; height:21%; border-radius:6vw; background:rgba(255,252,240,.96); box-shadow:0 .8vw 2vw var(--shadow); display:flex; align-items:center; justify-content:center; padding:0 7%; }
+#speedTrack { position:relative; width:100%; height:38%; border-radius:999px; background:linear-gradient(90deg,#df2c2c 0%,#f78b12 43%,#ffdc1f 52%,#32bf4d 100%); box-shadow:inset 0 .3vw .7vw rgba(0,0,0,.2); }
+#speedTrack::before { content:""; position:absolute; left:50%; top:50%; width:2.2vw; height:2.2vw; min-width:18px; min-height:18px; border:.45vw solid white; border-radius:50%; transform:translate(-50%,-50%); opacity:.95; }
+.dir { position:absolute; top:50%; transform:translateY(-50%); width:8%; height:70%; filter:drop-shadow(0 .2vw .2vw rgba(0,0,0,.15)); }
+.dir.left { left:8%; }
+.dir.right { right:8%; }
+.dir::before { content:""; position:absolute; top:50%; width:70%; height:28%; background:white; transform:translateY(-50%); border-radius:999px; }
+.dir.left::before { right:0; }
+.dir.right::before { left:0; }
+.dir::after { content:""; position:absolute; top:50%; width:0; height:0; transform:translateY(-50%); border-top:1.2vw solid transparent; border-bottom:1.2vw solid transparent; }
+.dir.left::after { left:0; border-right:1.9vw solid white; }
+.dir.right::after { right:0; border-left:1.9vw solid white; }
+#knob { position:absolute; top:50%; left:50%; width:6.2vw; height:6.2vw; min-width:52px; min-height:52px; max-width:100px; max-height:100px; transform:translate(-50%,-56%); border-radius:50%; background:radial-gradient(circle at 34% 28%,#ff7a6d 0 18%,#ef312a 38%,#c91f1a 100%); border:.65vw solid #363a40; box-shadow:0 .6vw 1vw rgba(0,0,0,.4); pointer-events:none; }
+#speedInput { position:absolute; inset:-65% -4%; width:108%; height:230%; opacity:.001; cursor:pointer; touch-action:none; }
+.bigBtn { position:absolute; bottom:3.0%; width:17.5%; aspect-ratio:1/1; max-height:24%; border-radius:50%; border:.7vw solid rgba(255,255,255,.85); box-shadow:0 .7vw 1.6vw var(--shadow); display:flex; align-items:center; justify-content:center; padding:0; }
+#horn { left:3.2%; background:linear-gradient(145deg,#2b8ce3,#0967b8); }
+#stop { right:3.2%; background:linear-gradient(145deg,#ff493c,#d71818); border-color:#ffd929; outline:.75vw solid #2f3238; }
+.btnIcon { width:55%; height:55%; fill:#ffd234; stroke:#ffd234; stroke-width:6; }
+#stop .btnIcon { fill:white; stroke:white; }
+#bt { position:absolute; right:3.7%; top:3.0%; width:11%; height:8.8%; border-radius:999px; background:rgba(19,94,176,.9); display:flex; align-items:center; justify-content:center; gap:14%; box-shadow:0 .45vw 1vw rgba(0,0,0,.2); border:none; }
+#btDot { width:18%; aspect-ratio:1; border-radius:50%; background:#e53935; box-shadow:0 0 1vw currentColor; }
+#bt svg { width:30%; height:70%; fill:white; }
+#home { position:absolute; left:2.6%; top:3%; width:7.5%; aspect-ratio:1; border-radius:50%; background:rgba(19,94,176,.92); border:.4vw solid rgba(255,255,255,.8); box-shadow:0 .45vw 1vw rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; }
+#home svg { width:55%; height:55%; fill:white; }
+.lampHotspot { position:absolute; border:none; background:transparent; border-radius:50%; }
+#frontLamp { left:65.7%; top:33.6%; width:10.2%; aspect-ratio:1; }
+#chimneyLamp { left:64.4%; top:8.8%; width:9.5%; height:18%; border-radius:40%; }
+#lampGlowFront, #lampGlowTop { position:absolute; pointer-events:none; opacity:0; mix-blend-mode:screen; filter:blur(.1vw); }
+#lampGlowFront { left:68.2%; top:36.2%; width:5.2%; aspect-ratio:1; border-radius:50%; }
+#lampGlowTop { left:67.3%; top:12%; width:3.5%; height:7%; border-radius:50%; }
+.glowOn { opacity:.95 !important; box-shadow:0 0 2.6vw 1.2vw currentColor; background:currentColor; }
+#toast { position:absolute; left:50%; top:3%; transform:translateX(-50%); background:rgba(0,0,0,.72); color:white; padding:.7vw 1.5vw; border-radius:999px; font-weight:700; font-size:clamp(13px,1.4vw,24px); opacity:0; transition:opacity .2s; pointer-events:none; white-space:nowrap; }
+#toast.show { opacity:1; }
+#unsupported { display:none; position:absolute; inset:15% 15%; background:rgba(255,255,255,.96); border-radius:4vw; padding:5vw; text-align:center; font-size:clamp(18px,2.2vw,34px); z-index:20; }
+@media (max-aspect-ratio: 16/10) { #app { max-width:none; max-height:none; } }

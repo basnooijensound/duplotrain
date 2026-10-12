@@ -1,0 +1,19 @@
+GRATIS ONLINE ZETTEN MET GITHUB PAGES
+=====================================
+
+Dit kost niets.
+
+1. Ga op de pc naar github.com en maak/inlog een gratis account.
+2. Maak een nieuwe repository, bijvoorbeeld: duplo-machinist
+3. Kies Public. (De app is dan technisch openbaar via de URL; er staan geen persoonsgegevens behalve de getekende avatar/afbeelding in.)
+4. Upload ALLE bestanden en mappen uit deze DuploMachinist-Web map naar de repository.
+5. Open in GitHub: Settings > Pages.
+6. Bij 'Build and deployment': Source = Deploy from a branch.
+7. Branch = main, map = /(root), klik Save.
+8. Na een paar minuten toont GitHub bovenaan de HTTPS-link.
+9. Open die link op de kindertablet in Chrome.
+10. Tik op Bluetooth, kies de trein, en kies daarna in Chrome 'App installeren' of 'Toevoegen aan startscherm'.
+
+PRIVACY-OPMERKING
+Als je de repository Public maakt, kan iemand die de URL/repository vindt de bestanden zien.
+Wil je de afbeelding van je dochter niet publiek hosten, dan kunnen we ook een andere gratis/private route kiezen of de app met een neutrale avatar maken.
